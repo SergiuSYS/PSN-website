@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌡️ Sensor Dashboard</h1>
+
+    <div class="card">
+        <p>Temperature: <span id="temp">-</span> °C</p>
+        <p>Humidity: <span id="hum">-</span> %</p>
+        <p>Flood: <span id="flood">-</span></p>
+    </div>
+
+    <div class="card color-card">
+    <h3>LED Control</h3>
+
+    <label class="color-label">Pick color</label>
+
+    <div class="color-wrapper">
+        <label for="colorPicker">
+            <div class="color-preview" id="colorPreview"></div>
+        </label>
+
+        <input type="color" id="colorPicker">
+    </div>
+
+    <button onclick="sendColor()">Send Color</button>
+</div>
+<div class="card">
+    <h3>Send Message</h3>
+
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+
+    <button onclick="sendMessage()">Send</button>
+
+    <p id="status"></p>
+</div>
+
+<div class="card">
+    <h3>Messages</h3>
+    <ul id="messagesList"></ul>
+</div>
+
+<div class="card">
+    <h3>Alerts</h3>
+    <ul id="alertsList"></ul>
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
